@@ -11,5 +11,10 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        stage('Deploy') {
+            steps {
+                sh "deploy adapters: [tomcat9(credentialsId: 'TomcatLogin', path: '', url: 'http://localhost:9000/')], contextPath: 'calculadora', war: 'target/calculadora.war'"
+            }
+        }
     }
 }
