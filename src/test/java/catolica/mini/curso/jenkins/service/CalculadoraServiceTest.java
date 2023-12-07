@@ -21,7 +21,7 @@ public class CalculadoraServiceTest {
     @Test
     public void deveriaSomarDoisValores() {
         int a = 2;
-        int b = 2;
+        int b = 1;
         int result = 4;
         Assertions.assertEquals(result, calculadoraService.somar(a, b));
     }
